@@ -2,7 +2,7 @@
 /** @jsx React.createElement */
 
 import {React} from './react'
-
+// Rerendering
 // --------------------------------------------------
 // const container = document.getElementById('root')
 
@@ -23,11 +23,25 @@ import {React} from './react'
 
 // rerender('World')
 
+// Functional Component
 // --------------------------------------------------
+// function App(props: {name: string}) {
+//   return <h1>Hi {props.name}</h1>
+// }
+// const element = <App name="World" />
+// const container = document.getElementById('root')
+// React.render(element, container)
 
-function App(props: {name: string}) {
-  return <h1>Hi {props.name}</h1>
+// Hooks
+// --------------------------------------------------
+function Counter() {
+  const [state, setState] = React.useState(1)
+  return (
+    <div>
+      Count: {state} <button onClick={() => setState((c) => c + 1)}>increment</button>
+    </div>
+  )
 }
-const element = <App name="World" />
+const element = <Counter />
 const container = document.getElementById('root')
 React.render(element, container)

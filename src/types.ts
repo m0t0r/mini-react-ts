@@ -23,5 +23,6 @@ export type Fiber = {
   sibling: Fiber | null
   child: Fiber | null
   alternate: Fiber | null
+  hooks: {state: any; queue: any[]}[]
   effectTag?: 'UPDATE' | 'PLACEMENT' | 'DELETION'
 }
