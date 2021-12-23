@@ -1,5 +1,5 @@
 export type Props = Record<string, unknown> & {
-  children: ReactElement[] | TextElement[]
+  children?: ReactElement[] | TextElement[]
 }
 
 export type ReactElement = {
@@ -16,7 +16,7 @@ export type TextElement = ReactElement & {
 }
 
 export type Fiber = {
-  type: string
+  type: string | Function
   dom: Node | null
   props: Props
   parent: Fiber | null
